@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Pacifico', cursive; /* Romantic font */
+            background: linear-gradient(to bottom right, #ff4d6d, #ffcccb); /* Romantic theme background */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #fff; /* White text */
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #fff; /* White text */
+            margin-top: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        #yesButton,
+        #noButton {
+            padding: 15px 30px;
+            font-size: 1.8em;
+            margin: 0 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.5s ease, background-color 0.5s ease;
+        }
+
+        #yesButton:hover {
+            transform: scale(1.2); /* Increase size on hover */
+            background-color: #fff; /* White background on hover */
+            color: #ff4d6d; /* Romantic theme color on hover */
+        }
+
+        #noButton:hover {
+            transform: scale(1.2); /* Increase size on hover */
+            background-color: #fff; /* White background on hover */
+            color: #ff4d6d; /* Romantic theme color on hover */
+        }
+
+        #valentineGif {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Rounded corners */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Be My Valentine</title>
+</head>
+
+<body>
+    <h1>Will You Be My Valentine?</h1>
+    <p>Click the button to answer!</p>
+
+    <div class="button-container">
+        <button id="yesButton" onclick="answerValentine()">Yes</button>
+        <button id="noButton" onclick="growYesButton()">No</button>
+    </div>
+
+    <img id="valentineGif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXlsNDNieWFqN3Rxem5ydmlvdmw0NjlrY2xhZ3Q5MnA2ZzNnbjYwcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GxQABXQhII7cY/giphy.gif" alt="Valentine GIF">
+
+    <script>
+        function answerValentine() {
+            window.location.href = 'lovePage.html';
+        }
+
+        function growYesButton() {
+            const yesButton = document.getElementById('yesButton');
+            const currentSize = window.getComputedStyle(yesButton).fontSize;
+            const newSize = parseFloat(currentSize) * 1.2; // Increase by 20%
+            yesButton.style.fontSize = newSize + 'px';
+        }
+    </script>
+</body>
+
+</html>
